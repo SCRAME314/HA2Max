@@ -14,7 +14,7 @@ markdown
 3. Установите и перезагрузите Home Assistant
 
 ### Вручную
-1. Скопируйте папку `max_messenger` в `custom_components/`
+1. Скопируйте папку `HA2Max` в `custom_components/`
 2. Перезагрузите Home Assistant
 
 ## Конфигурация
