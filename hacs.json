@@ -1,0 +1,9 @@
+json
+
+{
+  "name": "MAX Messenger for Home Assistant",
+  "render_readme": true,
+  "homeassistant": "2023.8.0",
+  "zip_release": true,
+  "filename": "HA2Max.zip"
+}
