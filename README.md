@@ -13,8 +13,11 @@ markdown
 2. Найдите "MAX Messenger" в разделе Integrations
 3. Установите и перезагрузите Home Assistant
 
-### Вручную
-1. Скопируйте папку `HA2Max` в `custom_components/`
+markdown
+
+## Ручная установка
+
+1. Скопируйте папку `custom_components/HA2Max` в `/config/custom_components/`
 2. Перезагрузите Home Assistant
 
 ## Конфигурация
@@ -22,12 +25,10 @@ markdown
 Добавьте в `configuration.yaml`:
 
 ```yaml
-max_messenger:
+ha2max:  # ← ОБНОВЛЕНО
   access_token: "ВАШ_ТОКЕН_БОТА"
-  # Опционально: пользовательские имена для чатов
   chat_names:
     123456789: "Важные оповещения"
-    987654321: "Логи системы"
 Получение токена
 
     Перейдите на MAX для партнёров
