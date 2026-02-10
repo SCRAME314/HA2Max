@@ -3,6 +3,7 @@ python
 import logging
 from homeassistant.components.notify import BaseNotificationService
 from .const import (
+    DOMAIN,  # ← ДОБАВЛЕНО
     ATTR_FORMAT,
     ATTR_DISABLE_LINK_PREVIEW,
     ATTR_NOTIFY,
@@ -18,7 +19,7 @@ async def async_get_service(hass, config, discovery_info=None):
     
     chat_id = discovery_info["chat_id"]
     chat_name = discovery_info["chat_name"]
-    api_client = hass.data["max_messenger"]["api_client"]
+    api_client = hass.data[DOMAIN]["api_client"]  # ← ОБНОВЛЕНО
     
     return MaxNotificationService(api_client, chat_id, chat_name)
 
