@@ -9,11 +9,11 @@ from homeassistant.helpers.discovery import async_load_platform
 
 from .max_api import MaxApiClient
 
-DOMAIN = "max_messenger"
+DOMAIN = "ha2max"  # ← ОБНОВЛЕНО
 CONF_CHAT_NAMES = "chat_names"
 
 CONFIG_SCHEMA = vol.Schema({
-    DOMAIN: vol.Schema({
+    DOMAIN: vol.Schema({  # ← ОБНОВЛЕНО
         vol.Required(CONF_ACCESS_TOKEN): cv.string,
         vol.Optional(CONF_CHAT_NAMES, default={}): vol.Schema({
             cv.positive_int: cv.string,
@@ -25,10 +25,10 @@ _LOGGER = logging.getLogger(__name__)
 
 async def async_setup(hass: HomeAssistant, config: dict) -> bool:
     """Настройка компонента из configuration.yaml."""
-    if DOMAIN not in config:
+    if DOMAIN not in config:  # ← ОБНОВЛЕНО
         return True
 
-    conf = config[DOMAIN]
+    conf = config[DOMAIN]  # ← ОБНОВЛЕНО
     access_token = conf[CONF_ACCESS_TOKEN]
     
     api_client = MaxApiClient(access_token)
@@ -46,7 +46,7 @@ async def async_setup(hass: HomeAssistant, config: dict) -> bool:
         _LOGGER.warning("Бот не состоит ни в одном групповом чате")
         chats = []
     
-    hass.data[DOMAIN] = {
+    hass.data[DOMAIN] = {  # ← ОБНОВЛЕНО
         "api_client": api_client,
         "bot_info": bot_info,
         "chats": chats,
@@ -65,7 +65,7 @@ async def async_setup(hass: HomeAssistant, config: dict) -> bool:
         await async_load_platform(
             hass,
             "notify",
-            DOMAIN,
+            DOMAIN,  # ← ОБНОВЛЕНО
             {
                 "chat_id": chat_id,
                 "chat_name": chat_name,
@@ -79,15 +79,14 @@ async def async_setup(hass: HomeAssistant, config: dict) -> bool:
     async def async_update_chats(call):
         """Сервис для обновления списка чатов."""
         new_chats = await api_client.get_chats()
-        hass.data[DOMAIN]["chats"] = new_chats
+        hass.data[DOMAIN]["chats"] = new_chats  # ← ОБНОВЛЕНО
         _LOGGER.info("Список чатов обновлён. Найдено %s чатов", len(new_chats))
-        # TODO: Динамическое обновление сервисов
     
-    hass.services.async_register(DOMAIN, "update_chats", async_update_chats)
+    hass.services.async_register(DOMAIN, "update_chats", async_update_chats)  # ← ОБНОВЛЕНО
     
     return True
 
 async def async_unload(hass: HomeAssistant) -> bool:
     """Выгрузка компонента."""
-    hass.data.pop(DOMAIN, None)
+    hass.data.pop(DOMAIN, None)  # ← ОБНОВЛЕНО
     return True
