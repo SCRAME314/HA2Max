@@ -1,10 +1,8 @@
 {
-  "name": "MAX Messenger",
-  "render_readme": true,
-  "homeassistant": "2023.8.0",
-  "zip_release": true,
-  "filename": "HA2Max.zip",  // ← ИМЯ АРХИВА
-  "content_in_root": false,
-  "country": ["RU", "BY", "KZ"],
-  "icon": "mdi:chat"
+    "name": "MAX Messenger",
+    "content_in_root": false,
+    "render_readme": true,
+    "domains": ["ha2max"],
+    "country": "RU",
+    "homeassistant": "2023.8.0"
 }
