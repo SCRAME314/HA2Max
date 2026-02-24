@@ -87,15 +87,3 @@ logger:
 
 text
 
-
-**`hacs.json`:**
-```json
-{
-  "name": "MAX Messenger",
-  "render_readme": true,
-  "homeassistant": "2023.8.0",
-  "zip_release": true,
-  "filename": "max_messenger.zip",
-  "country": ["RU", "BY", "KZ", "UA"],
-  "icon": "mdi:chat"
-}
