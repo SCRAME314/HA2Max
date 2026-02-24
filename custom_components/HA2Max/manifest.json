@@ -1,11 +1,12 @@
 {
-  "domain": "ha2max",           // ← ДОМЕН В НИЖНЕМ РЕГИСТРЕ
-  "name": "HA2Max",            // ← ИМЯ ИНТЕГРАЦИИ
-  "codeowners": ["@scrame314"],
-  "version": "1.0.0",
+  "domain": "ha2max",
+  "name": "MAX Messenger",
+  "codeowners": ["@SCRAME314"],
   "config_flow": false,
-  "documentation": "https://github.com/scrame314/HA2Max",
-  "issue_tracker": "https://github.com/scrame314/HA2Max/issues",
-  "requirements": ["aiohttp>=3.8.0"],
-  "iot_class": "cloud_push"
+  "dependencies": [],
+  "documentation": "https://github.com/SCRAME314/HA2Max",
+  "integration_type": "service",
+  "iot_class": "cloud_push",
+  "requirements": [],
+  "version": "1.0.0"
 }
