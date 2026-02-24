@@ -5,6 +5,9 @@ markdown
 [![hacs_badge](https://img.shields.io/badge/HACS-Custom-orange.svg)](https://github.com/hacs/integration)
 
 Интеграция для отправки уведомлений из Home Assistant в мессенджер MAX.
+# ВНИМАНИЕ! ПОЛУЧЕНИЕ БОТА ПОКА ДОСТУПНО ТОЛЬКО ДЛЯ ЮРИДИЧЕСКИХ ЛИЦ, ПРОЕКТ ЗАМОРОЖЕН
+
+
 
 ## Установка
 
