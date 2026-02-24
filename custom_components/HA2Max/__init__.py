@@ -1,5 +1,3 @@
-python
-
 import logging
 import voluptuous as vol
 from homeassistant.core import HomeAssistant
