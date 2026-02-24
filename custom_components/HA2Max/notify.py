@@ -1,5 +1,3 @@
-python
-
 import logging
 from homeassistant.components.notify import BaseNotificationService
 from .const import (
